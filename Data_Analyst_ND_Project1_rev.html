@@ -3,7 +3,7 @@
 <head>
 
 <meta charset="utf-8" />
-<title>Untitled</title>
+<title>Data_Analyst_ND_.Project1</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -181,26 +181,25 @@ div#notebook {
 
 </div>
 </div>
-</div>
+</div>1. What is our independent variable? What is our dependent variable?
+
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>1. What is our independent variable? What is our dependent variable?</p>
 <p>Our indepdendent variable is whether the word is either congruent or icongruent and our dependent variable is the time that it takes to name the ink colors.</p>
 
 </div>
 </div>
-</div>
+</div>2. What is an appropriate set of hypotheses for this task? What kind of statistical test do you expect to perform? Justify your choices.
+
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>2. What is an appropriate set of hypotheses for this task? What kind of statistical test do you expect to perform? Justify your choices.
-(Now it’s your chance to try out the Stroop task for yourself. Go to this link, which has a Java-based applet for performing the Stroop task. Record the times that you received on the task (you do not need to submit your times to the site.) Now, download this dataset which contains results from a number of participants in the task. Each row of the dataset contains the performance for one participant, with the first number their results on the congruent task and the second number their performance on the incongruent task.)</li>
-</p>
+<p>(Now it’s your chance to try out the Stroop task for yourself. Go to this link, which has a Java-based applet for performing the Stroop task. Record the times that you received on the task (you do not need to submit your times to the site.) Now, download this dataset which contains results from a number of participants in the task. Each row of the dataset contains the performance for one participant, with the first number their results on the congruent task and the second number their performance on the incongruent task.)</p>
 <p>Null hypothesis for this task is that it takes the same time on average to read congruent and incongruent words. I am going to use ANOVA to infer the difference in performance. If the perforamnce data shows statistically significant difference, we can determine that the incongruent words make an impact on reading performance.</p>
 
 </div>
@@ -211,15 +210,44 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>3. Report some descriptive statistics regarding this dataset. Include at least one measure of central tendency and at least one measure of variability.</li>
-</p>
+<p>Additional answers to comments:</p>
+<p>1.First, declare explicitly the set of hypotheses. 
+◦This means declaring the null and alternative hypotheses for the test you choose.</p>
+<p>◦Also Be sure to explain the hypotheses in detail, specifically pertaining to if they are referencing the sample( designate by x) or the population (designated by u).
+<a href="http://stattrek.com/sampling/populations-and-samples.aspx">http://stattrek.com/sampling/populations-and-samples.aspx</a>
+◾The first and the most important is the key to why this subject is considered to be a part of Inferential Statistics.
+◾The idea of hypothesis testing is that we have limited data, samples (denoted by X), and from that limited data, we are trying to infer something about the population (denoted by U)
+◾We do not need to perform inferential hypothesis testing on the sample means because that is easy - if we want to know if the sample means are different, we just calculate the means and compare.
+◾So to say we are testing to infer anything about the sample means is incorrect, we are trying to infer something about the population (population means).</p>
+<p>◦Also be aware that the set of hypotheses will differ depending on if you choose a one-tail/one-sided or a two-tail/two-sided test and the tail-type should be declared.
+<a href="http://www.chem.utoronto.ca/coursenotes/analsci/StatsTutorial/12tailed.html">http://www.chem.utoronto.ca/coursenotes/analsci/StatsTutorial/12tailed.html</a></p>
+<p>2.Second, declare the appropriate test and justify your answers. Why is this test appropriate? When doing this consider the following.◦Are the participants from the different trials paired/dependent or unpaired/independent?
+◦Then please remember to justify why you have chosen this version of the test.
+<a href="https://en.wikipedia.org/wiki/Student%27s_t-test#Unpaired_and_paired_two-sample_t-tests">https://en.wikipedia.org/wiki/Student%27s_t-test#Unpaired_and_paired_two-sample_t-tests</a></p>
 
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p style = 'color:blue'>Considering that the experiment aims to prove cognition processing time delay to different information better performance, the hypotheses will be
+	<br/>
+H0 : u1 &gt;= u2 <br/>
+H1 : u1 &lt; u2</p>
+<p style = 'color:blue'>I will use u1 for the mean of Congruent word performance population and u2 for the mean of Incongruent word performance population.</p>
+<p style = 'color:blue'>From the experiments, you want to identify the performance delay due to different information. Therefore, it is necessary to demonstrate that the u1 is less than u2. That is to say, the null hypothesis will be rejected when the mean of congruent word population shows better performance than the one of incongruent word population does.</p>
+<p style = 'color:blue'>These hypotheses will be verified by one tailed test.  And since the experiement was performed by each participants and we can think two data are paired or associated, I will run t -test with paired samples and one tailed test.</p>
+
+</div>
+</div>
+</div>3. Report some descriptive statistics regarding this dataset. Include at least one measure of central tendency and at least one measure of variability.
+
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
@@ -236,7 +264,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[19]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[2]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div style="max-height:1000px;max-width:1500px;overflow:auto;">
@@ -299,20 +327,11 @@ div#notebook {
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>4. Provide one or two visualizations that show the distribution of the sample data. Write one or two sentences noting what you observe about the plot or plots.</p>
+</div>4. Provide one or two visualizations that show the distribution of the sample data. Write one or two sentences noting what you observe about the plot or plots.
 
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="o">%</span><span class="k">pylab</span> inline
@@ -339,11 +358,11 @@ div#notebook {
 </div>
 </div>
 
-<div class="output_area"><div class="prompt output_prompt">Out[25]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[3]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.legend.Legend at 0xc12f2b0&gt;</pre>
+<pre>&lt;matplotlib.legend.Legend at 0x162c7470&gt;</pre>
 </div>
 
 </div>
@@ -473,7 +492,7 @@ YII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
@@ -490,11 +509,11 @@ YII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[27]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.legend.Legend at 0xcbb3a90&gt;</pre>
+<pre>&lt;matplotlib.legend.Legend at 0x32d05c0&gt;</pre>
 </div>
 
 </div>
@@ -628,20 +647,11 @@ Tquqv0qyO7NRf0ud36mMUH8+VCVJPTDtWy8lSRNgspekHjDZS1IPmOwlqQdM9pLUAyZ7SeoBk70k
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>5. Now, perform the statistical test and report your results. What is your confidence level and your critical statistic value? Do you reject the null hypothesis or fail to reject it? Come to a conclusion in terms of the experiment task. Did the results match up with your expectations?</p>
+</div>5. Now, perform the statistical test and report your results. What is your confidence level and your critical statistic value? Do you reject the null hypothesis or fail to reject it? Come to a conclusion in terms of the experiment task. Did the results match up with your expectations?
 
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
@@ -657,11 +667,11 @@ Tquqv0qyO7NRf0ud36mMUH8+VCVJPTDtWy8lSRNgspekHjDZS1IPmOwlqQdM9pLUAyZ7SeoBk70k
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[58]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>42.67029729896894</pre>
+<pre>42.670297298968549</pre>
 </div>
 
 </div>
@@ -672,7 +682,7 @@ Tquqv0qyO7NRf0ud36mMUH8+VCVJPTDtWy8lSRNgspekHjDZS1IPmOwlqQdM9pLUAyZ7SeoBk70k
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="mi">1</span> <span class="o">-</span> <span class="n">p</span>
@@ -686,7 +696,7 @@ Tquqv0qyO7NRf0ud36mMUH8+VCVJPTDtWy8lSRNgspekHjDZS1IPmOwlqQdM9pLUAyZ7SeoBk70k
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[59]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -713,7 +723,7 @@ In addition, I have checked the outlier detection with Grubb's test and 95% CI f
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[122]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">lst</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
@@ -727,34 +737,34 @@ In addition, I have checked the outlier detection with Grubb's test and 95% CI f
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[122]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0     15.687
-1     17.394
-2     17.425
-3     17.510
-4     17.960
-5     18.644
-6     18.741
-7     19.278
-8     20.330
-9     20.429
-10    20.762
-11    20.878
-12    21.157
-13    21.214
-14    22.058
+<pre>0     19.278
+1     18.741
+2     21.214
+3     15.687
+4     22.803
+5     20.878
+6     24.572
+7     17.394
+8     20.762
+9     26.282
+10    24.524
+11    18.644
+12    17.510
+13    20.330
+14    35.255
 15    22.158
-16    22.803
-17    23.894
-18    24.524
-19    24.572
-20    25.139
-21    26.282
-22    34.288
-23    35.255
+16    25.139
+17    20.429
+18    17.425
+19    34.288
+20    23.894
+21    17.960
+22    22.058
+23    21.157
 Name: Incongruent, dtype: float64</pre>
 </div>
 
@@ -766,7 +776,7 @@ Name: Incongruent, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[98]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">adIncongruent</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span> <span class="o">&lt;</span> <span class="n">lst</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">+</span> <span class="mf">2.64</span><span class="o">*</span><span class="n">lst</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
@@ -782,33 +792,33 @@ Name: Incongruent, dtype: float64</pre>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[98]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0     15.687
-1     17.394
-2     17.425
-3     17.510
-4     17.960
-5     18.644
-6     18.741
-7     19.278
-8     20.330
-9     20.429
-10    20.762
-11    20.878
-12    21.157
-13    21.214
-14    22.058
+<pre>0     19.278
+1     18.741
+2     21.214
+3     15.687
+4     22.803
+5     20.878
+6     24.572
+7     17.394
+8     20.762
+9     26.282
+10    24.524
+11    18.644
+12    17.510
+13    20.330
 15    22.158
-16    22.803
-17    23.894
-18    24.524
-19    24.572
-20    25.139
-21    26.282
-22    34.288
+16    25.139
+17    20.429
+18    17.425
+19    34.288
+20    23.894
+21    17.960
+22    22.058
+23    21.157
 Name: Incongruent, dtype: float64</pre>
 </div>
 
@@ -830,7 +840,7 @@ Name: Incongruent, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[117]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c">#for a in adI:</span>
@@ -851,32 +861,32 @@ Name: Incongruent, dtype: float64</pre>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[117]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0     15.687
-1     17.394
-2     17.425
-3     17.510
-4     17.960
-5     18.644
-6     18.741
-7     19.278
-8     20.330
-9     20.429
-10    20.762
-11    20.878
-12    21.157
-13    21.214
-14    22.058
+<pre>0     19.278
+1     18.741
+2     21.214
+3     15.687
+4     22.803
+5     20.878
+6     24.572
+7     17.394
+8     20.762
+9     26.282
+10    24.524
+11    18.644
+12    17.510
+13    20.330
 15    22.158
-16    22.803
-17    23.894
-18    24.524
-19    24.572
-20    25.139
-21    26.282
+16    25.139
+17    20.429
+18    17.425
+20    23.894
+21    17.960
+22    22.058
+23    21.157
 Name: Incongruent, dtype: float64</pre>
 </div>
 
@@ -898,7 +908,7 @@ Name: Incongruent, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[118]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">adIIm</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span> <span class="o">&lt;</span> <span class="n">adII</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">+</span> <span class="mf">2.62</span><span class="o">*</span><span class="n">adII</span><span class="o">.</span><span class="n">std</span><span class="p">()</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">adII</span><span class="p">]</span>
@@ -914,32 +924,32 @@ Name: Incongruent, dtype: float64</pre>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[118]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[10]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0     15.687
-1     17.394
-2     17.425
-3     17.510
-4     17.960
-5     18.644
-6     18.741
-7     19.278
-8     20.330
-9     20.429
-10    20.762
-11    20.878
-12    21.157
-13    21.214
-14    22.058
+<pre>0     19.278
+1     18.741
+2     21.214
+3     15.687
+4     22.803
+5     20.878
+6     24.572
+7     17.394
+8     20.762
+9     26.282
+10    24.524
+11    18.644
+12    17.510
+13    20.330
 15    22.158
-16    22.803
-17    23.894
-18    24.524
-19    24.572
-20    25.139
-21    26.282
+16    25.139
+17    20.429
+18    17.425
+19    34.288
+20    23.894
+21    17.960
+22    22.058
 Name: Incongruent, dtype: float64</pre>
 </div>
 
@@ -961,7 +971,7 @@ Name: Incongruent, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[121]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">stats</span><span class="o">.</span><span class="n">f_oneway</span><span class="p">(</span><span class="n">lst</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">adIII</span><span class="p">)</span>
@@ -975,11 +985,11 @@ Name: Incongruent, dtype: float64</pre>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[121]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[11]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>(50.277286715003449, 8.4207253044597326e-09)</pre>
+<pre>(43.394093490713409, 4.6132768157675698e-08)</pre>
 </div>
 
 </div>
@@ -1003,11 +1013,52 @@ Name: Incongruent, dtype: float64</pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>6. Optional: What do you think is responsible for the effects observed? Can you think of an alternative or similar task that would result in a similar effect? Some research about the problem will be helpful for thinking about these two questions!</p>
+<p style = 'color:blue'>Reviewer Comments
+The results are consistent with an ANOVA test. Please note the feedback in Question 2 and the results of this section may change depending on the actions taken from the feedback in Question 2.</p>
 
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">stats</span><span class="o">.</span><span class="n">ttest_rel</span><span class="p">(</span><span class="o">*</span><span class="n">lst</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[14]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(-8.020706944109957, 4.1030005857111781e-08)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p style = 'color:blue'>I have use t-test with paired samples and one-tailed test. 
+t value is -8.0207 and the associated p value is 2 * 4.10e-8 (for one tailed test). Since the P value is much smaller than 0.05 (significant level). So the null hypothesis is rejected with 95% confidence level.</p>
+
+</div>
+</div>
+</div>6. Optional: What do you think is responsible for the effects observed? Can you think of an alternative or similar task that would result in a similar effect? Some research about the problem will be helpful for thinking about these two questions!
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
